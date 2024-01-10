@@ -5,7 +5,7 @@
     <string name="ja_possui_conta">Já possui conta?</string>
     <string name="ja_tem_conta_login">Login</string>
     <string name="registrar">Registrar</string>
-    <string name="password_hint">******</string>
+    <string name="password_hint">Palavra-passe</string>
     <string name="e_mail_hint">E-mail</string>
     <string name="nome_hint">Nome</string>
     <string name="introduza_os_dados">Introduza os dados</string>
@@ -14,6 +14,6 @@
     <string name="virtualclass">VirtualClass</string>
     <string name="descricao_app">Explore o futuro da educação com a aplicação revolucionária \'Virtual Class\', uma ferramenta inovadora projetada para simplificar e aprimorar a gestão de tarefas acadêmicas.</string>
     <string name="entrar">Entrar</string>
-    <string name="nao_tem_conta">Não tem conta?</string>
+    <string name="naoTemConta">Não tem conta?</string>
     <string name="nao_tem_conta_resgistrar">Resgistrar</string>
 </resources>
