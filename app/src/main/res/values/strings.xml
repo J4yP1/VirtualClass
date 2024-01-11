@@ -16,4 +16,6 @@
     <string name="entrar">Entrar</string>
     <string name="naoTemConta">Não tem conta?</string>
     <string name="nao_tem_conta_resgistrar">Resgistrar</string>
+    <string name="login_btn">Login</string>
+    <string name="esqueceuPalavraPasse">Esqueceu-se da Palavra-passe?</string>
 </resources>
