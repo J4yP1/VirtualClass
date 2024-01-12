@@ -7,7 +7,7 @@ import androidx.navigation.fragment.NavHostFragment
 import com.example.trabalho_pmeu.databinding.ActivityMainBinding
 //import com.example.trabalho_pmeu.helper.initToolbar
 
-class MainActivity : AppCompatActivity() {
+class  MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 

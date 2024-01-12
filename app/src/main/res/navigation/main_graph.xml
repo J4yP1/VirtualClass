@@ -9,7 +9,11 @@
         android:id="@+id/registerP"
         android:name="com.example.trabalho_pmeu.ui.auth.RegisterFragment"
         android:label="fragment_register_p"
-        tools:layout="@layout/fragment_register_p" />
+        tools:layout="@layout/fragment_register_p" >
+        <action
+            android:id="@+id/action_registerP_to_loginP"
+            app:destination="@id/loginP" />
+    </fragment>
     <fragment
         android:id="@+id/landingP"
         android:name="com.example.trabalho_pmeu.ui.LandingFragment"
