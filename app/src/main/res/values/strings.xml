@@ -18,4 +18,7 @@
     <string name="nao_tem_conta_resgistrar">Resgistrar</string>
     <string name="login_btn">Login</string>
     <string name="esqueceuPalavraPasse">Esqueceu-se da Palavra-passe?</string>
+    <string name="introduzaMail">Introduza o seu E-mail</string>
+    <string name="btnEnviar">Enviar</string>
+    <string name="BtnCancelar">Cancelar</string>
 </resources>
