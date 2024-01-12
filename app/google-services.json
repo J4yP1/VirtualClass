@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "511690541190",
+    "project_id": "virtualclass-pmeu-v2",
+    "storage_bucket": "virtualclass-pmeu-v2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:511690541190:android:bed1d2e7cb624f51f1a907",
+        "android_client_info": {
+          "package_name": "com.example.trabalho_pmeu"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSwWGYdCkHRdj9lQP53PHY9Jd8ZhOqcqQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
