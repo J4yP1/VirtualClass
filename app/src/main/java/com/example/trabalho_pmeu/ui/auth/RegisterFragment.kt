@@ -5,53 +5,87 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.trabalho_pmeu.ARG_PARAM1
-import com.example.trabalho_pmeu.ARG_PARAM2
 import com.example.trabalho_pmeu.R
+import androidx.core.view.isVisible
+import androidx.navigation.fragment.findNavController
+import com.example.trabalho_pmeu.databinding.FragmentRegisterPBinding
+/*
+import com.example.trabalho_pmeu.helper.BaseFragment
+import com.example.trabalho_pmeu.helper.FirebaseHelper
+import com.example.trabalho_pmeu.helper.initToolbar
+import com.example.trabalho_pmeu.helper.showBottomSheet*/
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
-/**
- * A simple [Fragment] subclass.
- * Use the [RegisterFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class RegisterFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private var _binding: FragmentRegisterPBinding? = null
+    private val binding get() = _binding!!
+
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register_p, container, false)
+    ): View {
+        _binding = FragmentRegisterPBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RegisterP.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RegisterFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //initToolbar(binding.toolbar)
+
+        auth = Firebase.auth
+
+        initClicks()
+    }
+
+    private fun initClicks() {
+        binding.btnRegister.setOnClickListener { validateData() }
+    }
+
+    private fun validateData() {
+        val email = binding.edtEmail.text.toString().trim()
+        val password = binding.edtPassword.text.toString().trim()
+
+        if (email.isNotEmpty()) {
+            if (password.isNotEmpty()) {
+
+                //hideKeyboard()
+
+                //binding.progressBar.isVisible = true
+
+                //registerUser(email, password)
+
+            } else {
+               // showBottomSheet(message = R.string.text_password_empty_register_fragment)
+            }
+        } else {
+           // showBottomSheet(message = R.string.text_email_empty_register_fragment)
+        }
+    }
+
+   /* private fun registerUser(email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password)
+            .addOnCompleteListener(requireActivity()) { task ->
+                if (task.isSuccessful) {
+                    findNavController().navigate(R.id.action_global_homeFragment)
+                } else {
+                    showBottomSheet(
+                        message = FirebaseHelper.validError(
+                            task.exception?.message ?: ""
+                        )
+                    )
+                    binding.progressBar.isVisible = false
                 }
             }
+    }*/
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
+
 }

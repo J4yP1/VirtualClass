@@ -3,22 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_graph"
-    app:startDestination="@id/landingP">
+    app:startDestination="@id/loginP">
 
     <fragment
         android:id="@+id/registerP"
         android:name="com.example.trabalho_pmeu.ui.auth.RegisterFragment"
         android:label="fragment_register_p"
         tools:layout="@layout/fragment_register_p" />
-    <fragment
-        android:id="@+id/landingP"
-        android:name="com.example.trabalho_pmeu.ui.LandingFragment"
-        android:label="fragment_landing_p"
-        tools:layout="@layout/fragment_landing_p" >
-        <action
-            android:id="@+id/action_landingP_to_loginP"
-            app:destination="@id/loginP" />
-    </fragment>
     <fragment
         android:id="@+id/loginP"
         android:name="com.example.trabalho_pmeu.ui.auth.LoginFragment"

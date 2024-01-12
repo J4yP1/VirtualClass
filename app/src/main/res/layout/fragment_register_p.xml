@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/edtEmail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.auth.RegisterFragment">
@@ -15,8 +16,7 @@
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
-
+            android:layout_height="match_parent" />
 
 
         <TextView
@@ -119,11 +119,11 @@
             app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
         <Button
-            android:id="@+id/button"
-            android:background="@drawable/btn1"
+            android:id="@+id/btnRegister"
             android:layout_width="225dp"
             android:layout_height="52dp"
             android:layout_marginTop="40dp"
+            android:background="@drawable/btn1"
             android:text="@string/registrar"
             android:textColor="#7B7575"
             app:layout_constraintEnd_toEndOf="parent"
@@ -139,7 +139,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.421"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
+            app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 
         <TextView
             android:id="@+id/textView5"
@@ -151,7 +151,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.65"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button" />
+            app:layout_constraintTop_toBottomOf="@+id/btnRegister" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

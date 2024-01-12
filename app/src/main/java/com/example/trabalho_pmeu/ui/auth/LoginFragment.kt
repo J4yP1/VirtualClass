@@ -43,7 +43,7 @@ class LoginFragment : Fragment() {
     }
 
     private fun initClicks() {
-        binding.btnLogin.setOnClickListener { validateData() }
+        //binding.btnLogin.setOnClickListener { validateData() }
 
         binding.btnRegister.setOnClickListener {
             findNavController().navigate(R.id.action_loginP_to_registerP)
@@ -53,7 +53,7 @@ class LoginFragment : Fragment() {
             findNavController().navigate(R.id.action_loginP_to_recoverFragment)
         }
     }
-
+/*
     private fun validateData() {
         val email = binding.edtEmail.text.toString().trim()
         val password = binding.edtPassword.text.toString().trim()
@@ -77,8 +77,8 @@ class LoginFragment : Fragment() {
                 message = R.string.text_email_empty_login_fragment*/
             )
         }
-    }
-
+    }*/
+/*
     private fun loginUser(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(requireActivity()) { task ->
@@ -92,7 +92,7 @@ class LoginFragment : Fragment() {
                 }
             }
     }
-
+*/
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
