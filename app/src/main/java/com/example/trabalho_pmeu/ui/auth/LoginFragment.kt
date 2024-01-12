@@ -45,7 +45,7 @@ class LoginFragment : Fragment() {
     private fun initClicks() {
         //binding.btnLogin.setOnClickListener { validateData() }
 
-        binding.btnRegister.setOnClickListener {
+        binding.btnRegisterPage.setOnClickListener {
             findNavController().navigate(R.id.action_loginP_to_registerP)
         }
 
