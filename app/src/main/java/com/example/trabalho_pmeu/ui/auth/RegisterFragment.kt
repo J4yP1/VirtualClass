@@ -60,28 +60,28 @@ class RegisterFragment : Fragment() {
                 //registerUser(email, password)
 
             } else {
-               // showBottomSheet(message = R.string.text_password_empty_register_fragment)
+                // showBottomSheet(message = R.string.text_password_empty_register_fragment)
             }
         } else {
-           // showBottomSheet(message = R.string.text_email_empty_register_fragment)
+            // showBottomSheet(message = R.string.text_email_empty_register_fragment)
         }
     }
 
-   /* private fun registerUser(email: String, password: String) {
-        auth.createUserWithEmailAndPassword(email, password)
-            .addOnCompleteListener(requireActivity()) { task ->
-                if (task.isSuccessful) {
-                    findNavController().navigate(R.id.action_global_homeFragment)
-                } else {
-                    showBottomSheet(
-                        message = FirebaseHelper.validError(
-                            task.exception?.message ?: ""
-                        )
-                    )
-                    binding.progressBar.isVisible = false
-                }
-            }
-    }*/
+    /* private fun registerUser(email: String, password: String) {
+         auth.createUserWithEmailAndPassword(email, password)
+             .addOnCompleteListener(requireActivity()) { task ->
+                 if (task.isSuccessful) {
+                     findNavController().navigate(R.id.action_global_homeFragment)
+                 } else {
+                     showBottomSheet(
+                         message = FirebaseHelper.validError(
+                             task.exception?.message ?: ""
+                         )
+                     )
+                     binding.progressBar.isVisible = false
+                 }
+             }
+     }*/
 
     override fun onDestroyView() {
         super.onDestroyView()
