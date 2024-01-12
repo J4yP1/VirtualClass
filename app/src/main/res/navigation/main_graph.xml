@@ -39,4 +39,13 @@
         android:name="com.example.trabalho_pmeu.ui.auth.RecoverFragment"
         android:label="fragment_recover"
         tools:layout="@layout/fragment_recover" />
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.trabalho_pmeu.ui.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_loginP"
+            app:destination="@id/loginP" />
+    </fragment>
 </navigation>
