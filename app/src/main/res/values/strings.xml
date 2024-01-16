@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">Trabalho_Pmeu</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="ja_possui_conta">Já possui conta?</string>
+
+<!--    Authentication-->
     <string name="ja_tem_conta_login">Login</string>
+    <string name="ja_possui_conta">Já possui conta?</string>
     <string name="registrar">Registrar</string>
     <string name="password_hint">Palavra-passe</string>
     <string name="e_mail_hint">E-mail</string>
@@ -21,4 +22,7 @@
     <string name="introduzaMail">Introduza o seu E-mail</string>
     <string name="btnEnviar">Enviar</string>
     <string name="BtnCancelar">Cancelar</string>
+
+<!--    Others-->
+
 </resources>
