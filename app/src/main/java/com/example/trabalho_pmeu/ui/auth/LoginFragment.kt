@@ -87,7 +87,7 @@ class LoginFragment : Fragment() {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(requireActivity()) { task ->
                 if (task.isSuccessful) {
-                    findNavController().navigate(R.id.action_loginP_to_homeP)
+                    findNavController().navigate(R.id.action_global_homeP)
                 } else {
                     /*showBottomSheet(
                         message = FirebaseHelper.validError(task.exception?.message ?: "")

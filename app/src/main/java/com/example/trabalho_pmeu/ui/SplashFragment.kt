@@ -39,9 +39,9 @@ class SplashFragment : Fragment() {
     private fun checkAuth() {
         auth = Firebase.auth
         if (auth.currentUser == null) {
-            findNavController().navigate(R.id.action_splashFragment2_to_loginP)
+            findNavController().navigate(R.id.action_splashFragment2_to_auth)
         } else {
-            findNavController().navigate(R.id.action_loginP_to_homeP)
+            findNavController().navigate(R.id.action_splashFragment2_to_homeP)
         }
     }
 

@@ -6,55 +6,65 @@
     app:startDestination="@id/splashFragment2">
 
     <fragment
-        android:id="@+id/registerP"
-        android:name="com.example.trabalho_pmeu.ui.auth.RegisterFragment"
-        android:label="fragment_register_p"
-        tools:layout="@layout/fragment_register_p" >
-        <action
-            android:id="@+id/action_registerP_to_homeP"
-            app:destination="@id/homeP" />
-    </fragment>
-    <fragment
-        android:id="@+id/loginP"
-        android:name="com.example.trabalho_pmeu.ui.auth.LoginFragment"
-        android:label="fragment_login_p"
-        tools:layout="@layout/fragment_login_p" >
-        <action
-            android:id="@+id/action_loginP_to_recoverFragment"
-            app:destination="@id/recoverFragment" />
-        <action
-            android:id="@+id/action_loginP_to_registerP"
-            app:destination="@id/registerP" />
-        <action
-            android:id="@+id/action_loginP_to_homeP"
-            app:destination="@id/homeP" />
-    </fragment>
-    <fragment
         android:id="@+id/homeP"
         android:name="com.example.trabalho_pmeu.ui.HomeFragment"
         android:label="fragment_home_p"
         tools:layout="@layout/fragment_home_p" >
         <action
-            android:id="@+id/action_homeP_to_profileFragment2"
-            app:destination="@id/profileFragment2" />
+            android:id="@+id/action_homeP_to_auth"
+            app:destination="@id/auth"
+            app:popUpTo="@id/homeP"
+            app:popUpToInclusive="true"/>
     </fragment>
-    <fragment
-        android:id="@+id/recoverFragment"
-        android:name="com.example.trabalho_pmeu.ui.auth.RecoverFragment"
-        android:label="fragment_recover"
-        tools:layout="@layout/fragment_recover" />
     <fragment
         android:id="@+id/splashFragment2"
         android:name="com.example.trabalho_pmeu.ui.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
-            android:id="@+id/action_splashFragment2_to_loginP"
-            app:destination="@id/loginP" />
+            android:id="@+id/action_splashFragment2_to_auth"
+            app:destination="@id/auth"
+            app:popUpTo="@id/splashFragment2"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_splashFragment2_to_homeP"
+            app:destination="@id/homeP"
+            app:popUpTo="@id/splashFragment2"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/profileFragment2"
         android:name="com.example.trabalho_pmeu.ui.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <navigation android:id="@+id/auth"
+        app:startDestination="@id/loginP">
+        <fragment
+            android:id="@+id/loginP"
+            android:name="com.example.trabalho_pmeu.ui.auth.LoginFragment"
+            android:label="fragment_login_p"
+            tools:layout="@layout/fragment_login_p" >
+            <action
+                android:id="@+id/action_loginP_to_registerP"
+                app:destination="@id/registerP" />
+            <action
+                android:id="@+id/action_loginP_to_recoverFragment"
+                app:destination="@id/recoverFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/registerP"
+            android:name="com.example.trabalho_pmeu.ui.auth.RegisterFragment"
+            android:label="fragment_register_p"
+            tools:layout="@layout/fragment_register_p" />
+        <fragment
+            android:id="@+id/recoverFragment"
+            android:name="com.example.trabalho_pmeu.ui.auth.RecoverFragment"
+            android:label="fragment_recover"
+            tools:layout="@layout/fragment_recover" />
+        <action
+            android:id="@+id/action_global_homeP"
+            app:destination="@id/homeP"
+            app:popUpTo="@id/loginP"
+            app:popUpToInclusive="true"/>
+    </navigation>
 </navigation>
