@@ -23,6 +23,11 @@
     <string name="btnEnviar">Enviar</string>
     <string name="BtnCancelar">Cancelar</string>
 
-<!--    Others-->
-
+<!--    Erros-->
+    <string name="error_generic">Ocorreu um erro, por favor tente novamente mais tarde.</string>
+    <string name="account_not_registered_register_fragment">Nenhuma conta encontrada com este e-mail.</string>
+    <string name="invalid_email_register_fragment">Introduza um e-mail válido.</string>
+    <string name="invalid_password_register_fragment">Senha inválida, tente novamente.</string>
+    <string name="email_in_use_register_fragment">Este e-mail já está registrado.</string>
+    <string name="strong_password_register_fragment">Insira uma senha mais forte.</string>
 </resources>

@@ -28,9 +28,9 @@
                     app:layout_constraintEnd_toStartOf="@+id/ibLogout"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:tabIndicatorColor="@color/white"
+                    app:tabIndicatorColor="@color/grey"
                     app:tabTextAppearance="@style/CustomTabLayout"
-                    app:tabTextColor="@color/white" />
+                    app:tabTextColor="@color/grey" />
 
                 <ImageButton
                     android:id="@+id/ibLogout"

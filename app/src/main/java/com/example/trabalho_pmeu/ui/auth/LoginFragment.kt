@@ -1,6 +1,7 @@
 package com.example.trabalho_pmeu.ui.auth
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import com.example.trabalho_pmeu.R
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.example.trabalho_pmeu.databinding.FragmentLoginPBinding
+import com.example.trabalho_pmeu.helper.FirebaseHelper
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -63,7 +65,7 @@ class LoginFragment : Fragment() {
         if (email.isNotEmpty()) {
             if (password.isNotEmpty()) {
 
-               // hideKeyboard()
+                // hideKeyboard()
 
                 binding.progressBar.isVisible = true
 
@@ -73,7 +75,8 @@ class LoginFragment : Fragment() {
                 /*showBottomSheet(
                     message = R.string.text_password_empty_login_fragment
                 )*/
-                Toast.makeText(requireContext(), "Informe a sua pass-word", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Informe a sua pass-word", Toast.LENGTH_SHORT)
+                    .show()
             }
         } else {
             /*showBottomSheet(
@@ -92,11 +95,16 @@ class LoginFragment : Fragment() {
                     /*showBottomSheet(
                         message = FirebaseHelper.validError(task.exception?.message ?: "")
                     )*/
-                    //binding.progressBar.isVisible = false
+                    Toast.makeText(
+                        requireContext(),
+                        FirebaseHelper.validError(task.exception?.message ?: ""),
+                        Toast.LENGTH_SHORT
+                    ).show()
                     binding.progressBar.isVisible = false
                 }
             }
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

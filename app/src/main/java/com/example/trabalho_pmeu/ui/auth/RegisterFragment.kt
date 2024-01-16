@@ -10,6 +10,7 @@ import com.example.trabalho_pmeu.R
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.example.trabalho_pmeu.databinding.FragmentRegisterPBinding
+import com.example.trabalho_pmeu.helper.FirebaseHelper
 /*
 import com.example.trabalho_pmeu.helper.BaseFragment
 import com.example.trabalho_pmeu.helper.FirebaseHelper
@@ -81,6 +82,11 @@ class RegisterFragment : Fragment() {
                              task.exception?.message ?: ""
                          )
                      )*/
+                     Toast.makeText(
+                         requireContext(),
+                         FirebaseHelper.validError(task.exception?.message ?: ""),
+                         Toast.LENGTH_SHORT
+                     ).show()
                      binding.progressBar.isVisible = false
                  }
              }

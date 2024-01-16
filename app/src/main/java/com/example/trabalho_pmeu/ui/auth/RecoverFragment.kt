@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.core.view.isVisible
 import com.example.trabalho_pmeu.R
 import com.example.trabalho_pmeu.databinding.FragmentRecoverBinding
+import com.example.trabalho_pmeu.helper.FirebaseHelper
 /*import com.example.trabalho_pmeu.helper.BaseFragment
 import com.example.trabalho_pmeu.helper.FirebaseHelper
 import com.example.trabalho_pmeu.helper.initToolbar
@@ -72,6 +73,11 @@ class RecoverFragment : Fragment() {
                    /* showBottomSheet(
                         message = FirebaseHelper.validError(task.exception?.message ?: "")
                     )*/
+                    Toast.makeText(
+                        requireContext(),
+                        FirebaseHelper.validError(task.exception?.message ?: ""),
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
 
                 binding.progressBar.isVisible = false
