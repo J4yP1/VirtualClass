@@ -4,27 +4,29 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.trabalho_pmeu.R
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.example.trabalho_pmeu.databinding.FragmentLoginPBinding
-
-
-/*import com.example.trabalho_pmeu.databinding.FragmentLoginBinding
-import com.example.trabalho_pmeu.helper.BaseFragment
-import com.example.trabalho_pmeu.helper.FirebaseHelper
-import com.example.trabalho_pmeu.helper.showBottomSheet
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase*/
+import com.google.firebase.ktx.Firebase
+
+/*
+import com.example.trabalho_pmeu.databinding.FragmentLoginBinding
+import com.example.trabalho_pmeu.helper.BaseFragment
+import com.example.trabalho_pmeu.helper.FirebaseHelper
+import com.example.trabalho_pmeu.helper.showBottomSheet*/
+
 
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginPBinding? = null
     private val binding get() = _binding!!
 
-    //private lateinit var auth: FirebaseAuth
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,13 +39,13 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //auth = Firebase.auth
+        auth = Firebase.auth
 
         initClicks()
     }
 
     private fun initClicks() {
-        //binding.btnLogin.setOnClickListener { validateData() }
+        binding.btnLogin.setOnClickListener { validateData() }
 
         binding.btnRegisterPage.setOnClickListener {
             findNavController().navigate(R.id.action_loginP_to_registerP)
@@ -53,7 +55,7 @@ class LoginFragment : Fragment() {
             findNavController().navigate(R.id.action_loginP_to_recoverFragment)
         }
     }
-/*
+
     private fun validateData() {
         val email = binding.edtEmail.text.toString().trim()
         val password = binding.edtPassword.text.toString().trim()
@@ -63,22 +65,24 @@ class LoginFragment : Fragment() {
 
                // hideKeyboard()
 
-                //binding.progressBar.isVisible = true
+                binding.progressBar.isVisible = true
 
                 loginUser(email, password)
 
             } else {
                 /*showBottomSheet(
-                    message = R.string.text_password_empty_login_fragment*/
-                )
+                    message = R.string.text_password_empty_login_fragment
+                )*/
+                Toast.makeText(requireContext(), "Informe a sua pass-word", Toast.LENGTH_SHORT).show()
             }
         } else {
             /*showBottomSheet(
-                message = R.string.text_email_empty_login_fragment*/
-            )
+                message = R.string.text_email_empty_login_fragment
+            )*/
+            Toast.makeText(requireContext(), "Informe o seu email", Toast.LENGTH_SHORT).show()
         }
-    }*/
-/*
+    }
+
     private fun loginUser(email: String, password: String) {
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(requireActivity()) { task ->
@@ -89,10 +93,10 @@ class LoginFragment : Fragment() {
                         message = FirebaseHelper.validError(task.exception?.message ?: "")
                     )*/
                     //binding.progressBar.isVisible = false
+                    binding.progressBar.isVisible = false
                 }
             }
     }
-*/
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

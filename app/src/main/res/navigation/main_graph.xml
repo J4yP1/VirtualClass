@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_register_p" >
         <action
             android:id="@+id/action_registerP_to_homeP"
-            app:destination="@id/homeP" />
+            app:destination="@id/homeP"
+            app:popUpTo="@id/registerP"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/loginP"
@@ -25,6 +27,12 @@
         <action
             android:id="@+id/action_loginP_to_registerP"
             app:destination="@id/registerP" />
+        <action
+            android:id="@+id/action_loginP_to_homeP"
+            app:destination="@id/homeP"
+            app:popUpTo="@id/loginP"
+            app:popUpToInclusive="true"
+            />
     </fragment>
     <fragment
         android:id="@+id/homeP"
@@ -43,6 +51,8 @@
         tools:layout="@layout/fragment_splash" >
         <action
             android:id="@+id/action_splashFragment2_to_loginP"
-            app:destination="@id/loginP" />
+            app:destination="@id/loginP"
+            app:popUpTo="@id/splashFragment2"
+            app:popUpToInclusive="true"/>
     </fragment>
 </navigation>

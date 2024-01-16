@@ -53,7 +53,7 @@
             app:srcCompat="@drawable/welpage" />
 
         <EditText
-            android:id="@+id/inputEmail"
+            android:id="@+id/edtEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
@@ -63,7 +63,7 @@
             android:drawablePadding="10dp"
             android:ems="10"
             android:hint="@string/e_mail_hint"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:minHeight="48dp"
             android:paddingStart="20dp"
             android:paddingTop="10dp"
@@ -71,7 +71,7 @@
             android:paddingBottom="10dp"
             android:textColor="#7B7575"
             android:textColorHint="#7B7575"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            app:layout_constraintBottom_toTopOf="@+id/btn_recover"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +80,7 @@
             tools:ignore="TextFields" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btn_recover"
             android:layout_width="160dp"
             android:layout_height="50dp"
             android:layout_marginEnd="42dp"
@@ -91,6 +91,20 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.796" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateTint="@color/verde"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.888"
+            tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

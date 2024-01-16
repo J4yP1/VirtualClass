@@ -74,7 +74,7 @@ class RegisterFragment : Fragment() {
          auth.createUserWithEmailAndPassword(email, password)
              .addOnCompleteListener(requireActivity()) { task ->
                  if (task.isSuccessful) {
-                     findNavController().navigate(R.id.action_loginP_to_homeP)
+                     findNavController().navigate(R.id.action_registerP_to_homeP)
                  } else {
                      /*showBottomSheet(
                          message = FirebaseHelper.validError(
