@@ -2,7 +2,7 @@
     <string name="app_name">Trabalho_Pmeu</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-<!--    Authentication-->
+    <!--    Authentication-->
     <string name="ja_tem_conta_login">Login</string>
     <string name="ja_possui_conta">Já possui conta?</string>
     <string name="registrar">Registrar</string>
@@ -23,11 +23,19 @@
     <string name="btnEnviar">Enviar</string>
     <string name="BtnCancelar">Cancelar</string>
 
-<!--    Erros-->
+    <!--    Erros-->
     <string name="error_generic">Ocorreu um erro, por favor tente novamente mais tarde.</string>
     <string name="account_not_registered_register_fragment">Nenhuma conta encontrada com este e-mail.</string>
     <string name="invalid_email_register_fragment">Introduza um e-mail válido.</string>
     <string name="invalid_password_register_fragment">Senha inválida, tente novamente.</string>
     <string name="email_in_use_register_fragment">Este e-mail já está registrado.</string>
     <string name="strong_password_register_fragment">Insira uma senha mais forte.</string>
+    <string name="adicionar_tarefa">Adicionar Tarefa</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="feito">Feito</string>
+    <string name="a_fazer">A fazer</string>
+    <string name="por_fazer">Por Fazer</string>
+    <string name="status">Status:</string>
+    <string name="descricao">Descrição</string>
+    <string name="tarefa">Tarefa:</string>
 </resources>
