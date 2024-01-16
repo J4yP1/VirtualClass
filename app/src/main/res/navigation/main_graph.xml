@@ -11,8 +11,8 @@
         android:label="fragment_register_p"
         tools:layout="@layout/fragment_register_p" >
         <action
-            android:id="@+id/action_registerP_to_loginP"
-            app:destination="@id/loginP" />
+            android:id="@+id/action_registerP_to_homeP"
+            app:destination="@id/homeP" />
     </fragment>
     <fragment
         android:id="@+id/loginP"
@@ -20,14 +20,11 @@
         android:label="fragment_login_p"
         tools:layout="@layout/fragment_login_p" >
         <action
-            android:id="@+id/action_loginP_to_registerP"
-            app:destination="@id/registerP" />
-        <action
-            android:id="@+id/action_loginP_to_homeP"
-            app:destination="@id/homeP" />
-        <action
             android:id="@+id/action_loginP_to_recoverFragment"
             app:destination="@id/recoverFragment" />
+        <action
+            android:id="@+id/action_loginP_to_registerP"
+            app:destination="@id/registerP" />
     </fragment>
     <fragment
         android:id="@+id/homeP"

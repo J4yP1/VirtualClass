@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.trabalho_pmeu.R
 import androidx.core.view.isVisible
@@ -55,33 +56,35 @@ class RegisterFragment : Fragment() {
 
                 //hideKeyboard()
 
-                //binding.progressBar.isVisible = true
+                binding.progressBar.isVisible = true
 
-                //registerUser(email, password)
+                registerUser(email, password)
 
             } else {
                 // showBottomSheet(message = R.string.text_password_empty_register_fragment)
+                Toast.makeText(requireContext(), "Informe a sua pass-word", Toast.LENGTH_SHORT).show()
             }
         } else {
             // showBottomSheet(message = R.string.text_email_empty_register_fragment)
+            Toast.makeText(requireContext(), "Informe o seu email", Toast.LENGTH_SHORT).show()
         }
     }
 
-    /* private fun registerUser(email: String, password: String) {
+    private fun registerUser(email: String, password: String) {
          auth.createUserWithEmailAndPassword(email, password)
              .addOnCompleteListener(requireActivity()) { task ->
                  if (task.isSuccessful) {
-                     findNavController().navigate(R.id.action_global_homeFragment)
+                     findNavController().navigate(R.id.action_loginP_to_homeP)
                  } else {
-                     showBottomSheet(
+                     /*showBottomSheet(
                          message = FirebaseHelper.validError(
                              task.exception?.message ?: ""
                          )
-                     )
+                     )*/
                      binding.progressBar.isVisible = false
                  }
              }
-     }*/
+     }
 
     override fun onDestroyView() {
         super.onDestroyView()
