@@ -11,19 +11,15 @@ import com.example.trabalho_pmeu.R
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.example.trabalho_pmeu.databinding.FragmentLoginPBinding
+import com.example.trabalho_pmeu.helper.BaseFragment
 import com.example.trabalho_pmeu.helper.FirebaseHelper
+import com.example.trabalho_pmeu.helper.showBottomSheet
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-/*
-import com.example.trabalho_pmeu.databinding.FragmentLoginBinding
-import com.example.trabalho_pmeu.helper.BaseFragment
-import com.example.trabalho_pmeu.helper.FirebaseHelper
-import com.example.trabalho_pmeu.helper.showBottomSheet*/
 
-
-class LoginFragment : Fragment() {
+class LoginFragment : BaseFragment() {
 
     private var _binding: FragmentLoginPBinding? = null
     private val binding get() = _binding!!
@@ -65,24 +61,21 @@ class LoginFragment : Fragment() {
         if (email.isNotEmpty()) {
             if (password.isNotEmpty()) {
 
-                // hideKeyboard()
+                hideKeyboard()
 
                 binding.progressBar.isVisible = true
 
                 loginUser(email, password)
 
             } else {
-                /*showBottomSheet(
+                showBottomSheet(
                     message = R.string.text_password_empty_login_fragment
-                )*/
-                Toast.makeText(requireContext(), "Informe a sua pass-word", Toast.LENGTH_SHORT)
-                    .show()
+                )
             }
         } else {
-            /*showBottomSheet(
+            showBottomSheet(
                 message = R.string.text_email_empty_login_fragment
-            )*/
-            Toast.makeText(requireContext(), "Informe o seu email", Toast.LENGTH_SHORT).show()
+            )
         }
     }
 
@@ -92,14 +85,9 @@ class LoginFragment : Fragment() {
                 if (task.isSuccessful) {
                     findNavController().navigate(R.id.action_global_homeP)
                 } else {
-                    /*showBottomSheet(
+                    showBottomSheet(
                         message = FirebaseHelper.validError(task.exception?.message ?: "")
-                    )*/
-                    Toast.makeText(
-                        requireContext(),
-                        FirebaseHelper.validError(task.exception?.message ?: ""),
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    )
                     binding.progressBar.isVisible = false
                 }
             }

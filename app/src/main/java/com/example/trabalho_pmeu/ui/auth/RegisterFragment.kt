@@ -5,22 +5,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
 import com.example.trabalho_pmeu.R
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.example.trabalho_pmeu.databinding.FragmentRegisterPBinding
-import com.example.trabalho_pmeu.helper.FirebaseHelper
-/*
 import com.example.trabalho_pmeu.helper.BaseFragment
 import com.example.trabalho_pmeu.helper.FirebaseHelper
-import com.example.trabalho_pmeu.helper.initToolbar
-import com.example.trabalho_pmeu.helper.showBottomSheet*/
+import com.example.trabalho_pmeu.helper.showBottomSheet
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-class RegisterFragment : Fragment() {
+class RegisterFragment : BaseFragment() {
 
     private var _binding: FragmentRegisterPBinding? = null
     private val binding get() = _binding!!
@@ -37,7 +33,6 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //initToolbar(binding.toolbar)
 
         auth = Firebase.auth
 
@@ -55,19 +50,17 @@ class RegisterFragment : Fragment() {
         if (email.isNotEmpty()) {
             if (password.isNotEmpty()) {
 
-                //hideKeyboard()
+                hideKeyboard()
 
                 binding.progressBar.isVisible = true
 
                 registerUser(email, password)
 
             } else {
-                // showBottomSheet(message = R.string.text_password_empty_register_fragment)
-                Toast.makeText(requireContext(), "Informe a sua pass-word", Toast.LENGTH_SHORT).show()
+                showBottomSheet(message = R.string.text_password_empty_register_fragment)
             }
         } else {
-            // showBottomSheet(message = R.string.text_email_empty_register_fragment)
-            Toast.makeText(requireContext(), "Informe o seu email", Toast.LENGTH_SHORT).show()
+            showBottomSheet(message = R.string.text_email_empty_register_fragment)
         }
     }
 
@@ -77,11 +70,11 @@ class RegisterFragment : Fragment() {
                  if (task.isSuccessful) {
                      findNavController().navigate(R.id.action_global_homeP)
                  } else {
-                     /*showBottomSheet(
+                     showBottomSheet(
                          message = FirebaseHelper.validError(
                              task.exception?.message ?: ""
                          )
-                     )*/
+                     )
                      Toast.makeText(
                          requireContext(),
                          FirebaseHelper.validError(task.exception?.message ?: ""),

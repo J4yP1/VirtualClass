@@ -5,18 +5,29 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.trabalho_pmeu.R
 import com.example.trabalho_pmeu.databinding.FragmentTodoBinding
+import com.example.trabalho_pmeu.helper.BaseFragment
+import com.example.trabalho_pmeu.helper.FirebaseHelper
+import com.example.trabalho_pmeu.helper.showBottomSheet
+import com.example.trabalho_pmeu.model.Task
+import com.example.trabalho_pmeu.ui.adapter.TaskAdapter
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 
-class TodoFragment : Fragment() {
+class TodoFragment : BaseFragment() {
 
     private var _binding: FragmentTodoBinding? = null
     private val binding get() = _binding!!
 
-    //private lateinit var taskAdapter: TaskAdapter
+    private lateinit var taskAdapter: TaskAdapter
 
-    //private val taskList = mutableListOf<Task>()
+    private val taskList = mutableListOf<Task>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,7 +42,7 @@ class TodoFragment : Fragment() {
 
         initClicks()
 
-        //getTasks()
+        getTasks()
     }
 
     private fun initClicks() {
@@ -41,7 +52,7 @@ class TodoFragment : Fragment() {
 
     }
 
-    /*private fun getTasks() {
+    private fun getTasks() {
         FirebaseHelper
             .getDatabase()
             .child("task")
@@ -71,33 +82,33 @@ class TodoFragment : Fragment() {
                 }
 
             })
-    }*/
+    }
 
-    /*private fun tasksEmpty() {
+    private fun tasksEmpty() {
         binding.textInfo.text = if (taskList.isEmpty()) {
             getText(R.string.text_task_list_empty_todo_fragment)
         } else {
             ""
         }
-    }*/
+    }
 
-   /* private fun initAdapter() {
+   private fun initAdapter() {
         binding.rvTask.layoutManager = LinearLayoutManager(requireContext())
         binding.rvTask.setHasFixedSize(true)
         taskAdapter = TaskAdapter(requireContext(), taskList) { task, select ->
             optionSelect(task, select)
         }
         binding.rvTask.adapter = taskAdapter
-    }*/
+    }
 
-   /* private fun optionSelect(task: Task, select: Int) {
+   private fun optionSelect(task: Task, select: Int) {
         when (select) {
             TaskAdapter.SELECT_REMOVE -> {
                 deleteTask(task)
             }
             TaskAdapter.SELECT_EDIT -> {
                 val action = HomeFragmentDirections
-                    .actionHomeFragmentToFormTaskFragment(task)
+                    .actionHomePToFormTaskFragment(task)
                 findNavController().navigate(action)
             }
             TaskAdapter.SELECT_NEXT -> {
@@ -105,9 +116,9 @@ class TodoFragment : Fragment() {
                 updateTask(task)
             }
         }
-    }*/
+    }
 
-   /* private fun updateTask(task: Task) {
+   private fun updateTask(task: Task) {
         FirebaseHelper
             .getDatabase()
             .child("task")
@@ -162,7 +173,7 @@ class TodoFragment : Fragment() {
                 Toast.makeText(requireContext(), R.string.text_task_delete_sucess, Toast.LENGTH_SHORT).show()
             }
         )
-    }*/
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
