@@ -47,9 +47,10 @@ class TodoFragment : BaseFragment() {
 
     private fun initClicks() {
         binding.fabAdd.setOnClickListener {
-            findNavController().navigate(R.id.action_homeP_to_formTaskFragment)
+            val action = HomeFragmentDirections
+                .actionHomePToFormTaskFragment(null)
+            findNavController().navigate(action)
         }
-
     }
 
     private fun getTasks() {
@@ -92,7 +93,7 @@ class TodoFragment : BaseFragment() {
         }
     }
 
-   private fun initAdapter() {
+    private fun initAdapter() {
         binding.rvTask.layoutManager = LinearLayoutManager(requireContext())
         binding.rvTask.setHasFixedSize(true)
         taskAdapter = TaskAdapter(requireContext(), taskList) { task, select ->
@@ -101,7 +102,7 @@ class TodoFragment : BaseFragment() {
         binding.rvTask.adapter = taskAdapter
     }
 
-   private fun optionSelect(task: Task, select: Int) {
+    private fun optionSelect(task: Task, select: Int) {
         when (select) {
             TaskAdapter.SELECT_REMOVE -> {
                 deleteTask(task)
@@ -118,7 +119,7 @@ class TodoFragment : BaseFragment() {
         }
     }
 
-   private fun updateTask(task: Task) {
+    private fun updateTask(task: Task) {
         FirebaseHelper
             .getDatabase()
             .child("task")

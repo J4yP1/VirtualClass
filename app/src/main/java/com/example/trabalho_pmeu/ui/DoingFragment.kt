@@ -95,7 +95,7 @@ class DoingFragment : BaseFragment() {
             TaskAdapter.SELECT_REMOVE -> {
                 deleteTask(task)
             }
-           TaskAdapter.SELECT_EDIT -> {
+            TaskAdapter.SELECT_EDIT -> {
                 val action = HomeFragmentDirections
                     .actionHomePToFormTaskFragment(task)
                 findNavController().navigate(action)
@@ -111,7 +111,7 @@ class DoingFragment : BaseFragment() {
         }
     }
 
-   private fun updateTask(task: Task) {
+    private fun updateTask(task: Task) {
         FirebaseHelper
             .getDatabase()
             .child("task")
